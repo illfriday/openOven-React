@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { Navbar, NavbarBrand} from 'reactstrap';
+import RecipeDeck from './Components/RecipeDeck';
+import { RECIPES } from './shared/recipes'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      recipes: RECIPES
+    };
+  }
+  render() {
+    return (
+      <div className="App">
+        <Navbar dark color="dark">
+          <div className="container">
+            <NavbarBrand href="/">openOven</NavbarBrand>
+          </div>
+        </Navbar>
+        <RecipeDeck recipes={this.state.recipes}/>
+      </div>
+    );
+  }
 }
 
 export default App;
