@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand} from 'reactstrap';
-import RecipeDeck from './Components/RecipeDeck';
-import { RECIPES } from './shared/recipes'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { RECIPES } from './shared/recipes';
+import Header from './Components/Header'
+import Main from "./Components/Main";
 import './App.css';
 
 class App extends Component {
@@ -14,12 +15,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar dark color="dark">
-          <div className="container">
-            <NavbarBrand href="/">openOven</NavbarBrand>
-          </div>
-        </Navbar>
-        <RecipeDeck recipes={this.state.recipes}/>
+        <Header />
+        <Router>
+          <Switch>
+            <Route path="/" render={() => <Main recipes={this.state.recipes} />} />
+          </Switch>
+        </Router>
       </div>
     );
   }
