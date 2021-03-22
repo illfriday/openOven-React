@@ -1,7 +1,7 @@
 export const RECIPES = [
   {
     id: 0,
-    image: [
+    images: [
       {
         imgId: 0,
         src: "assets/images/macNCheese1.jpeg",
@@ -20,10 +20,11 @@ export const RECIPES = [
     ],
     name: "Mac and Cheese",
     description: "Melty, cheesy goodness...",
+    isBookmarked: false,
   },
   {
     id: 1,
-    image: [
+    images: [
       {
         imgId: 0,
         src: "assets/images/minestrone1.jpeg",
@@ -42,10 +43,11 @@ export const RECIPES = [
     ],
     name: "Minestrone Soup",
     description: "Rustic style soup with healthy greens...",
+    isBookmarked: false,
   },
   {
     id: 2,
-    image: [
+    images: [
       {
         imgId: 0,
         src: "assets/images/buddhaBowl1.jpeg",
@@ -64,5 +66,6 @@ export const RECIPES = [
     ],
     name: "Buddha Bowls",
     description: "Plant-based clean eating that satisfies...",
+    isBookmarked: false,
   },
 ];

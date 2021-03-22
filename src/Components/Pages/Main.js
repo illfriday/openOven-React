@@ -1,15 +1,15 @@
 import React from 'react';
 import { CardDeck } from 'reactstrap';
-import RecipeCard from './RecipeCard';
+import RecipeCard from '../Elements/RecipeCard';
 
 
-const Main = ({recipes}) => {
+const Main = (props) => {
 
     return (
       <div className="container">
         <div className="row" width="100%">
           <CardDeck>
-            <RecipeCard recipes={recipes} />
+            <RecipeCard recipes={props.recipes} handleToggleBookmark={props.handleToggleBookmark}/>
           </CardDeck>
         </div>
       </div>

@@ -12,7 +12,7 @@ import {
 
 const RecipeCarousel = (props) => {
 
-  const items = props.recipe.image;
+  const items = props.recipeImages;
   
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
