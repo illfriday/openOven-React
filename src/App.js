@@ -19,22 +19,22 @@ class App extends Component {
   }
   
   toggleBookmark(id) {
-    this.setState((currentState) => {
-      const recipe = currentState.recipes.find((recipe) => recipe.id === id);
+    const newState = [...this.state.recipes];
+    newState[id].isBookmarked = !newState[id].isBookmarked;
+    console.log(newState[id].isBookmarked);
 
-      return {
-        recipes: currentState.recipes.filter((recipe) => recipe.id !== id).concat(
-          [{
-            id,
-            isBookmarked: !recipe.isBookmarked,
-          }]
-        )
-      }
-
-     
-    })
-     console.log(this.recipe);
+    this.setState({recipes: newState})
   }
+  //   this.setState((currentState) => {
+  //     const recipe = currentState.recipes.find((recipe) => recipe.id === id);
+  //     recipe.isBookmarked = !recipe.isBookmarked;
+  //     console.log(recipe);
+
+  //     return {
+  //       recipes: [recipe]
+  //  }
+  // }
+
 
   render () {
     return (
