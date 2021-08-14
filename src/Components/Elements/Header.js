@@ -8,7 +8,7 @@ function Header() {
       <div className="container ">
         <div className="row ">
           <div className="col-8 ">
-            <NavbarBrand href="/">OPENOven</NavbarBrand>
+            <NavbarBrand href="/">openOven</NavbarBrand>
           </div>
           <div className="col-4">
             <NavLink exact to="/user">
